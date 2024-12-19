@@ -1,0 +1,56 @@
+{
+    "interfaces": [
+        {
+            "description": "'Test Loopback",
+            "enabled": true,
+            "name": "loopback10"
+        },
+        {
+            "description": "'Test Loopbacck",
+            "enabled": true,
+            "name": "loopback20"
+        },
+        {
+            "description": "'Uplink",
+            "enabled": true,
+            "name": "GigabitEthernet1"
+        }
+    ],
+    "l2_interfaces": [
+        {
+            "name": "GigabitEthernet1"
+        }
+    ],
+    "l3_interfaces": [
+        {
+            "name": "loopback10"
+        },
+        {
+            "name": "loopback20"
+        },
+        {
+            "name": "GigabitEthernet1"
+        }
+    ],
+    "lacp": {
+        "system": {
+            "priority": 32768
+        }
+    },
+    "lacp_interfaces": [
+        {
+            "name": "loopback10"
+        },
+        {
+            "name": "loopback20"
+        },
+        {
+            "name": "GigabitEthernet1"
+        }
+    ],
+    "lag_interfaces": [
+        {
+            "name": "GigabitEthernet1"
+        }
+    ]
+}
