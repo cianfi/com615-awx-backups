@@ -1,0 +1,185 @@
+{
+    "acl_interfaces": [],
+    "acls": [
+        {
+            "acls": [
+                {
+                    "aces": [
+                        {
+                            "remarks": [
+                                "Extended ACL for ssh access to internal network",
+                                "Extended ACL for ssh access to internal network  permit ssh 192.168.10.0 0.0.0.255 192.168.20.0 0.0."
+                            ]
+                        }
+                    ],
+                    "acl_type": "extended",
+                    "name": "EX_SSH_ACL_100"
+                },
+                {
+                    "aces": [
+                        {
+                            "remarks": [
+                                "Standard ACL for inside the Datacentre Network",
+                                "Standard ACL for inside the Datacentre Network  permit 192.168.10.0 0.0.0.255  deny any"
+                            ]
+                        }
+                    ],
+                    "acl_type": "standard",
+                    "name": "ST_INSIDE_ACL_10"
+                },
+                {
+                    "acl_type": "standard",
+                    "name": "test"
+                }
+            ],
+            "afi": "ipv4"
+        }
+    ],
+    "bgp_address_family": {},
+    "bgp_global": {},
+    "evpn_evi": [],
+    "evpn_global": {},
+    "hostname": {
+        "hostname": "sou-gw1"
+    },
+    "interfaces": [
+        {
+            "description": "''Uplink interface to ISP''",
+            "enabled": true,
+            "name": "GigabitEthernet1"
+        },
+        {
+            "description": "''Test Loopback interface shutdown''",
+            "enabled": false,
+            "name": "Loopback10"
+        },
+        {
+            "description": "''Test Loopbacck interface no shutdown''",
+            "enabled": true,
+            "name": "Loopback20"
+        }
+    ],
+    "l2_interfaces": [
+        {
+            "name": "Loopback10"
+        },
+        {
+            "name": "Loopback20"
+        },
+        {
+            "name": "GigabitEthernet1"
+        }
+    ],
+    "l3_interfaces": [
+        {
+            "ipv4": [
+                {
+                    "address": "192.168.56.2/24"
+                }
+            ],
+            "name": "GigabitEthernet1"
+        },
+        {
+            "ipv4": [
+                {
+                    "address": "192.168.57.2/24"
+                }
+            ],
+            "name": "Loopback10"
+        },
+        {
+            "ipv4": [
+                {
+                    "address": "192.168.58.2/24"
+                }
+            ],
+            "name": "Loopback20"
+        }
+    ],
+    "lacp": {
+        "system": {
+            "priority": 32768
+        }
+    },
+    "lacp_interfaces": [
+        {
+            "name": "loopback10"
+        },
+        {
+            "name": "loopback20"
+        },
+        {
+            "name": "GigabitEthernet1"
+        }
+    ],
+    "lag_interfaces": [],
+    "logging_global": {},
+    "ntp_global": {},
+    "ospf_interfaces": [
+        {
+            "name": "Loopback10"
+        },
+        {
+            "name": "Loopback20"
+        },
+        {
+            "name": "GigabitEthernet1"
+        }
+    ],
+    "prefix_lists": [],
+    "service": {
+        "config": true,
+        "counters": 0,
+        "dhcp": true,
+        "pad": true,
+        "password_recovery": true,
+        "prompt": true,
+        "slave_log": true,
+        "timestamps": [
+            {
+                "datetime_options": {
+                    "msec": true
+                },
+                "msg": "debug",
+                "timestamp": "datetime"
+            },
+            {
+                "datetime_options": {
+                    "msec": true
+                },
+                "msg": "log",
+                "timestamp": "datetime"
+            }
+        ]
+    },
+    "snmp_server": {},
+    "static_routes": [
+        {
+            "address_families": [
+                {
+                    "afi": "ipv4",
+                    "routes": [
+                        {
+                            "dest": "1.1.1.1/32",
+                            "next_hops": [
+                                {
+                                    "forward_router_address": "80.80.8.8"
+                                }
+                            ]
+                        },
+                        {
+                            "dest": "8.8.8.8/32",
+                            "next_hops": [
+                                {
+                                    "forward_router_address": "1.1.1.1"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "vrf_global": {},
+    "vxlan_vtep": {}
+}
